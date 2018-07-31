@@ -1,0 +1,29 @@
+* PCC Website.
+- www.palavacyclingclub.in
+** Infra design
+- Located at github pages.
+-- github account is aoplus
+- Domain registered from bigrock.in
+- Built With Jekyll Pages
+-- Theme
+--- Hyde
+--- Je
+** features
+- Site contents
+-- Home
+--- Layout
+---- Top: Stats of registered cyclists
+---- 3rd Coumn Center: Leaders List from the registered members.
+---- Bottom: About
+---- Footer: Links to other Pages.
+-- Monthly Statistics
+--- Top Commuters
+--- Top 10 Long distance commuters.
+--- Top 10 Frequent Commuters
+-- Commute registration
+-- Events - With Gallery
+--- BRM List
+--- Weekly Cycling Events
+--- Monthly Rides
+-- Rules
+-- Buy Cycling stuff

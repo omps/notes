@@ -1,0 +1,58 @@
+My python setup is so messed up, i mean not really messed up but a lot of tools installed are latest and some pip packages require backward compaitible packages which is really kind of annoying when we do the setup. and here comes to rescue the virtual environment. I am documenting my steps of how i created a my aws setup with jenkins, gitlab and elk stack and made it running on docker images using vagrant, whoa, i am naming almost all the service available, but then this is how you do automation, well i missed the ansible part, so here comes the ansible to provision evertthing from vagrant. :) Cool. Lets Begin.
+
+First step is to get the awscli working, after lot to hit and trials I finally manage to install the awscli on my laptop, which is low on memory and evertthing and I really do not want to use this box for anything significant. This is going to be a POC, so hold your horses tight and let the journey begin.
+
+once the CLI is ready and running in my venv. I tested it running the aws command, which failed as expected, as we need to some more setting up to do so this cli can communicate with my aws account.
+
+Creating the virtual envirnoment for work purpose.
+## All my work goes in the project area, hence this dir projects.
+cd projects
+virtualenv aws
+
+I really named my work areas as aws and no fancy names. in case you don't have virtualenv just install it.
+pip install virtualenv
+
+or
+
+pip install venv
+
+I will highly recommed to use python version 3.x I am using that version only, so some python commands may not work on the python 2.x you are on your own to find any soulution if you get stuck somewhere.
+
+Theres always more that one way to do a thing, so if you do not want to use the above command you can simply type
+
+python -m venv aws
+
+Python 3.x comes bydefault with venv, which can help you create a virtual environment,
+
+once the virtual environment is ready and setup we should get our awscli command up and running.
+got to the aws directory inside your projects directory
+cd aws
+activate the virtualenvironment, basically this will load paths and librabries to be accessed or referred inside this directory only, without touching the system libraries.
+source bin/activate
+install awscli, it will download and install the aws command.
+pip install awscli
+
+Ok now we are done with our awscli setup. There is a quick guide on Amazon aws site which gives some quick commands to test and work with for eg.
+
+aws ec2 describe-instances # This will describe your instances.
+
+and
+
+aws help # This will provide help with the  command
+
+but when i run the command it ofcourse will throw me error, since my command or configuration is not yet linked with my amazon account.
+
+Lets do the Getting Started  part.
+
+aws configure
+
+This will help us set up our aws
+
+Now this command ask you some questions, for instance your Access Key, Secret Access Key and your default region. Well, let me help you with this as well. To get your Access keys and secrets, we need to login to the aws  console Go to IAM(Identity and access management) -> Create a new user or select the existing one -> Go to security credentials and click “create the access key.”
+
+once we get the access key and the secret we need to give these options in aws configure file, otherwise we can also create this .aws file in the $HOME with the following entries
+
+export AWS_ACCESS_KEY_ID=AKIAJGMAO7TRLXQKE4
+export AWS_SECRET_ACCESS_KEY=4TMIc88wNIAWP205pr98Xx31i01Um
+
+An error occurred (AuthFailure) when calling the DescribeInstances operation: AWS was not able to validate the provided access credentials

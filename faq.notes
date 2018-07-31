@@ -1,0 +1,36 @@
+- How to pair bluetooth headset/speaker device on arch Linux.
+  https://wiki.archlinux.org/index.php/Bluetooth_headset
+  Enable bluetooth services
+  systemctl start bluetooth.services
+  start bluetoothctl
+  bluetoothctl
+  [bluetooth]# power on
+  [bluetooth]# agent on
+  [bluetooth]# default-agent
+  [bluetooth]# scan on
+  [bluetooth]# pair 00:1D:43:6D:03:26
+  [bluetooth]# connect 00:1D:43:6D:03:26
+  start pavucontrol
+  select the correct device in pavucontrol under output devices.
+  Disable scanning
+  [bluetooth]# scan off
+  [bluetooth]# exit
+
+- How to setup autoconnection
+   edit file /etc/pulse/default.pa
+   /etc/pulse/default.pa
+   # automatically switch to newly-connected devices
+   load-module module-switch-on-connect
+  Now make bluetoothctl trust your Bluetooth headset by running trust 00:1D:43:6D:03:26 inside the bluetoothctl console to prevent errors similar to:
+
+  bluetoothd[487]: Authentication attempt without agent
+  bluetoothd[487]: Access denied: org.bluez.Error.Rejected
+  [bluetooth]# trust 00:1D:43:6D:03:26
+
+  By default, your Bluetooth adapter will not power on after a reboot. Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at the bottom in the [Policy] section:
+
+  /etc/bluetooth/main.conf
+  [Policy]
+  AutoEnable=true
+- Remove the existing docker container.
+  docker rm <container name>x

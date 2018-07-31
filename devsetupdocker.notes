@@ -1,0 +1,30 @@
+Setup up ELK to understand and build sensible data dashboards.
+- Data could be anything.
+- Temprature, phone no, etc etc.
+- Check examples of dashboard to understand what other type of dashboards can be made.
+- check the data science portal kaggle.org to collect data and generate graphs.
+- See if this can be achieved or not.
+Check the docker services are running.
+* Setting up docker elk
+ - Docker pull sebp/elk
+* Setting up docker jenkins
+  - Docker pull jenkins/jenkins:lts
+* Setting up docker gitlab
+  - Docker pull gitlab/gitlab-ce
+* Use vagrant to autmate the orchestration of all these.
+  - install vagrant
+
+
+** Docker FAQ
+- Inspect the container.
+  docker inspect <container-id>
+- How to find the IP address of the container
+  docker inspect <container-id> | grep "IPAddress"
+  modern syntax
+  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+  old syntax:
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' container_name_or_id
+- Check the running docker.
+  docker ps
+- Check all docker images
+  docker ps -a

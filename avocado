@@ -1,0 +1,13 @@
+1. Installing avocado with pip.
+ pip install --user avocado-framework
+2. installing pluging using pip
+   pip install avocado-framework-plugin-vt avocado-framework-plugin-result-upload avocado-framework-plugin-varianter-pict avocado-framework-plugin-loader-yaml avocado-framework-plugin-resultsdb avocado-framework-plugin-runner-remote avocado-framework-plugin-robot avocado-framework-plugin-runner-vm avocado-framework-plugin-runner-docker avocado-framework-plugin-result-html
+3. listing avocado tests
+   avocado list
+
+4. Listing plugins info avocado
+   avocado plugins.
+
+5. !how to import avocado tests
+6. !issue with xunit render method.
+7. !pip install doesn't install any avocado test.

@@ -1,0 +1,52 @@
+; -*- mode: org -*-
+
+## Development enviroment
+- Mobile:
+       Setup termux with emacs.
+- Think pad:
+       project dirctory
+- MAcbook:
+       projects dirctory
+
+## Puppet module
+- Mobile:
+      Setup manually puppet module may not work for termux.
+-thinkpad
+        can setup using puppet manifests file.
+- mac bookm
+      shall work using puppet modules.
+
+
+## What I am going to work on.
+- Python projects
+- Websites
+- My blog.
+- My company
+
+## What are the packages and configuration required.
+- emacs as editor
+    - for python
+    - for html/css
+    - for markdown
+    - magit.
+- git for version control
+- firefox browser.
+- python
+   - virtualenv
+   - ipython2
+
+## Configuration.
+- Projects area
+  everything should be under the projects area. i.e $HOME/projects
+  every dir in projects area should have github repo.
+  every github repo should contain a README file and a trello link in that.
+  for eg:
+  omps.github.io : http://github.com/omps/omps.github.io
+  python: https://github.com/omps/learningpython
+  avocado: https://
+
+## some online tools
+- Trello - For managing todos and workflow management.
+- Github gist - for managing notes.
+- github.com - for managing public repos.
+- gitlab.com - for managing private repos
