@@ -1,0 +1,4 @@
+; -*- mode: org -*-
+
+** Limitations of VPC Peering
+VPC has its own set of limitations and in practice cannot be customized as it can be customized with internal network. Following are the limitations with VPC Peering
